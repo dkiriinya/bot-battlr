@@ -32,10 +32,12 @@ export default function BotCollection({ botlist, addToArmy }) {
   const handleSortChange = (category) => {
     setSortCategory(category);
     setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+    setCurrentPage(1);
   };
 
   const handleFilterChange = (selectedFilter) => {
     setFilterClass(selectedFilter);
+    setCurrentPage(1);
   };
 
   // Sorting logic
