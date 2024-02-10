@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from "react";
 
-export default function Army(){
+export default function YourBotArmy(){
     const [armybotInfo,setarmybotInfo] = useState([])
     useEffect(()=>{
         fetchArmyData()
@@ -30,7 +30,7 @@ export default function Army(){
                   <p className="card-text">Class: {bot.bot_class}</p>
                   <p className="card-text">Damage: {bot.damage}</p>
                   <p className="card-text">Health: {bot.health}</p>
-                  <button className="btn btn-danger">X</button>
+                  <button className="btn btn-danger onclick={}">X</button>
               </div>
             </div>
           </div>

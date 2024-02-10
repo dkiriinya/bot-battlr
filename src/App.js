@@ -1,9 +1,9 @@
 // App.js
 import './styles/index.css';
 import React, { useEffect, useState } from 'react';
-import Displaybots from './components/Displaybots';
+import BotCollection from './components/BotCollection';
+import YourBotArmy from './components/YourBotArmy';
 import { Routes,Route } from 'react-router-dom';
-import Army from './components/Army';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -38,9 +38,7 @@ function App() {
       });
 
       if (response.ok) {
-        const updatedBotList = botList.filter(bot=> bot.id !== botId);
-        setBotList(updatedBotList)
-        console.log('Bot added to army successfully');
+        alert('Bot added to army successfully');
       } else {
         console.error('Failed to add bot to army');
       }
@@ -54,8 +52,8 @@ function App() {
     <div>
     <Navbar />
       <Routes>
-        <Route path='/' element={<Displaybots botlist={botList} addToArmy={addBotToArmy} />} />
-        <Route path='/army' element={<Army/>} />
+        <Route path='/' element={<BotCollection botlist={botList} addToArmy={addBotToArmy} />} />
+        <Route path='/Army' element={<YourBotArmy/>} />
       </Routes>
       
     </div>

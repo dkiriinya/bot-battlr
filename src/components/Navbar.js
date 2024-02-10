@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar(){
-    const navbarLinks = ['','army']
+    const navbarLinks = ['','Army']
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">

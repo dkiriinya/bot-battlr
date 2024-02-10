@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function Displaybots({ botlist, addToArmy }) {
+export default function BotCollection({ botlist, addToArmy }) {
   const [armyBots, setArmyBots] = useState([]);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function Displaybots({ botlist, addToArmy }) {
 
   return (
     <div className="container">
-      <h1 style={{ textAlign: "center" }}>Bot List</h1>
+      <h1 style={{ textAlign: "center" }}>Bot Collection</h1>
       <div className="row">
         {botlist.map((bot, index) => (
           <div key={index} className="col-md-4 mb-4">
