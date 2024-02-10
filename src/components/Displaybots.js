@@ -1,9 +1,14 @@
+// Displaybots.js
 import React from "react";
 
-export default function Displaybots({ botlist }) {
+export default function Displaybots({ botlist, addToArmy }) {
+  const handlebuttonclick = (botId) => {
+    addToArmy(botId);
+  };
+
   return (
     <div className="container">
-    <h1 style={{textAlign:"center"}}>Bot List</h1>
+      <h1 style={{ textAlign: "center" }}>Bot List</h1>
       <div className="row">
         {botlist.map((bot, index) => (
           <div key={index} className="col-md-4 mb-4">
@@ -15,6 +20,7 @@ export default function Displaybots({ botlist }) {
                 <p className="card-text">Class: {bot.bot_class}</p>
                 <p className="card-text">Damage: {bot.damage}</p>
                 <p className="card-text">Health: {bot.health}</p>
+                <button className="btn btn-primary" onClick={() => handlebuttonclick(bot.id)}>Add to your Army</button>
               </div>
             </div>
           </div>
