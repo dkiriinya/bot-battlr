@@ -7,6 +7,12 @@ export default function YourBotArmy() {
     fetchArmyData();
   }, []);
 
+  const handleRelease = async (index) => {
+    alert('Bot has been released')
+    setArmybotInfo((prevInfo) => prevInfo.filter((_, i) => i !== index));
+
+  }
+
   const handleDelete = async (index) => {
     const isConfirmed = window.confirm('Are you sure you want to discharge this bot?');
 
@@ -41,10 +47,10 @@ export default function YourBotArmy() {
 
   return (
     <div className="container">
-      <h1 style={{ textAlign: "center" }}>Bot Army</h1>
+      <h1 style={{ textAlign: "center" }}>Your Bot Army</h1>
       <div className="row">
         {armybotInfo.map((bot, index) => (
-          <div key={index} className="col-md-4 mb-4">
+          <div key={index} className="col-md-3 mb-3">
             <div className="card">
               <img src={bot.avatar_url} className="card-img-top" alt={bot.name} />
               <div className="card-body">
@@ -53,6 +59,7 @@ export default function YourBotArmy() {
                 <p className="card-text">Class: {bot.bot_class}</p>
                 <p className="card-text">Damage: {bot.damage}</p>
                 <p className="card-text">Health: {bot.health}</p>
+                <button className="btn btn-primary" onClick={() => handleRelease(index)}>Release Bot</button>
                 <button className="btn btn-danger" onClick={() => handleDelete(index)}>X</button>
               </div>
             </div>

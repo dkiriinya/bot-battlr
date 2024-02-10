@@ -43,7 +43,7 @@ export default function BotCollection({ botlist, addToArmy }) {
       <h1 style={{ textAlign: "center" }}>Bot Collection</h1>
       <div className="row">
         {botlist.map((bot, index) => (
-          <div key={index} className="col-md-4 mb-4">
+          <div key={index} className="col-md-3 mb-3">
             <div className="card">
               <img src={bot.avatar_url} className="card-img-top" alt={bot.name} />
               <div className="card-body">

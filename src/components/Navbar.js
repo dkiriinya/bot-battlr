@@ -1,21 +1,34 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Navbar(){
-    const navbarLinks = ['','Army']
+const Navbar = () => {
+  const navbarLinks = ['', 'Army']; // Add your additional links as needed
 
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <ul className="navbar-nav mx-auto">
+  const headerStyle = {
+    backgroundColor: 'teal', // Modern background color (you can replace with your preferred color)
+    color: 'white', // Text color
+    padding: '20px', // Add padding for better visual appearance
+  };
+
+  const navLinkStyle = {
+    color: 'white',
+    textDecoration: 'none',
+    margin: '0 15px', // Add space between nav links
+  };
+
+  return (
+    <nav style={headerStyle}>
+      <div className="container">
+        <div>
           {navbarLinks.map((link) => (
-            <li key={link} className="nav-item">
-              <NavLink to={`/${link}`} className="nav-link">
-                {link === '' ? 'Home' : link}
-              </NavLink>
-            </li>
+            <NavLink key={link} to={`/${link}`} style={navLinkStyle}>
+              {link === '' ? 'Home' : link}
+            </NavLink>
           ))}
-        </ul>
-      </nav>
-    )
-
+        </div>
+      </div>
+    </nav>
+  );
 }
+
+export default Navbar;
