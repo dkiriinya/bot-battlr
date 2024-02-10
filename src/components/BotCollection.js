@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import SortBar from "./SortBar";
 
 export default function BotCollection({ botlist, addToArmy }) {
   const [armyBots, setArmyBots] = useState([]);
+  const [sortCategory, setSortCategory] = useState('health');
+  const [sortOrder, setSortOrder] = useState('asc');
 
   useEffect(() => {
     fetchArmyData();
@@ -17,6 +20,25 @@ export default function BotCollection({ botlist, addToArmy }) {
       console.error('Error fetching army data', error);
     }
   };
+
+  const handleSortChange = (category) => {
+    setSortCategory(category);
+    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+  };
+
+  // Sorting logic
+  const sortedBotList = [...botlist].sort((a, b) => {
+    const valueA = a[sortCategory];
+    const valueB = b[sortCategory];
+
+    if (sortOrder === 'asc') {
+      return valueA - valueB;
+    } else {
+      return valueB - valueA;
+    }
+  });
+
+
 
   const handleButtonClicked = async (botId) => {
     // Check if the bot is already in the army
@@ -41,8 +63,13 @@ export default function BotCollection({ botlist, addToArmy }) {
   return (
     <div className="container">
       <h1 style={{ textAlign: "center" }}>Bot Collection</h1>
+      <SortBar
+        onSortChange={handleSortChange}
+        sortOrder={sortOrder}
+        sortCategory={sortCategory}
+      />
       <div className="row">
-        {botlist.map((bot, index) => (
+        {sortedBotList.map((bot, index) => (
           <div key={index} className="col-md-3 mb-3">
             <div className="card">
               <img src={bot.avatar_url} className="card-img-top" alt={bot.name} />
