@@ -2,14 +2,17 @@
 import React, { useEffect, useState } from "react";
 import SortBar from "./SortBar";
 import FilterBar from "./FilterBar";
+import { useNavigate } from "react-router-dom";
+
 
 export default function BotCollection({ botlist, addToArmy }) {
   const [armyBots, setArmyBots] = useState([]);
-  const [sortCategory, setSortCategory] = useState('health');
+  const [sortCategory, setSortCategory] = useState('all');
   const [sortOrder, setSortOrder] = useState('asc');
   const [filterClass, setFilterClass] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetchArmyData();
@@ -66,6 +69,11 @@ export default function BotCollection({ botlist, addToArmy }) {
 
     addToArmy(botId);
     fetchArmyData();
+
+    navigate('/Army');
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+
   };
 
   const isBotAdded = (botId) => armyBots.some((armyBot) => armyBot.id === botId);
