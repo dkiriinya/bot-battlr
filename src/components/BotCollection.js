@@ -111,7 +111,10 @@ export default function BotCollection({ botlist, addToArmy }) {
         {Array.from({ length: Math.ceil(filteredBotList.length / itemsPerPage) }, (_, i) => (
           <button
             key={i + 1}
-            onClick={() => setCurrentPage(i + 1)}
+            onClick={() => {
+              setCurrentPage(i + 1)
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
             className={`btn ${currentPage === i + 1 ? 'btn-primary' : 'btn-secondary'}`}
           >
             {i + 1}
