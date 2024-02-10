@@ -1,10 +1,42 @@
-// Displaybots.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Displaybots({ botlist, addToArmy }) {
-  const handlebuttonclick = (botId) => {
-    addToArmy(botId);
+  const [armyBots, setArmyBots] = useState([]);
+
+  useEffect(() => {
+    fetchArmyData();
+  }, []);
+
+  const fetchArmyData = async () => {
+    const armyUrl = 'http://localhost:8001/army';
+    try {
+      const response = await fetch(armyUrl);
+      const data = await response.json();
+      setArmyBots(data);
+    } catch (error) {
+      console.error('Error fetching army data', error);
+    }
   };
+
+  const handleButtonClicked = async (botId) => {
+    // Check if the bot is already in the army
+    const isBotInArmy = armyBots.some((armyBot) => armyBot.id === botId);
+
+    if (isBotInArmy) {
+      console.log('Bot is already in the army');
+      return;
+    }
+
+    addToArmy(botId);
+
+    // Update the army data (assuming you have a function to update the army data)
+    // updateArmyData(botId);
+
+    // Optionally, you can refetch the army data to ensure it's up-to-date
+    fetchArmyData();
+  };
+
+  const isBotAdded = (botId) => armyBots.some((armyBot) => armyBot.id === botId);
 
   return (
     <div className="container">
@@ -20,7 +52,15 @@ export default function Displaybots({ botlist, addToArmy }) {
                 <p className="card-text">Class: {bot.bot_class}</p>
                 <p className="card-text">Damage: {bot.damage}</p>
                 <p className="card-text">Health: {bot.health}</p>
-                <button className="btn btn-primary" onClick={() => handlebuttonclick(bot.id)}>Add to your Army</button>
+                {isBotAdded(bot.id) ? (
+                  <button className="btn btn-success" disabled>
+                    Bot in Army
+                  </button>
+                ) : (
+                  <button className="btn btn-primary" onClick={() => handleButtonClicked(bot.id)}>
+                    Add to your Army
+                  </button>
+                )}
               </div>
             </div>
           </div>

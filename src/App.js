@@ -3,6 +3,8 @@ import './styles/index.css';
 import React, { useEffect, useState } from 'react';
 import Displaybots from './components/Displaybots';
 import { Routes,Route } from 'react-router-dom';
+import Army from './components/Army';
+import Navbar from './components/Navbar';
 
 function App() {
   const [botList, setBotList] = useState([]);
@@ -47,9 +49,15 @@ function App() {
     }
   }
 
+  
   return (
     <div>
-      <Displaybots botlist={botList} addToArmy={addBotToArmy}/>
+    <Navbar />
+      <Routes>
+        <Route path='/' element={<Displaybots botlist={botList} addToArmy={addBotToArmy} />} />
+        <Route path='/army' element={<Army/>} />
+      </Routes>
+      
     </div>
   );
 }
