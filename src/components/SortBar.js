@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SortBar = ({ onSortChange, sortOrder, sortCategory }) => {
-  const categories = ['health', 'armor', 'damage'];
+  const categories = ['all','health', 'armor', 'damage'];
 
   return (
     <div className="mb-3">
