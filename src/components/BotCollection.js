@@ -1,3 +1,4 @@
+// BotCollection.js
 import React, { useEffect, useState } from "react";
 import SortBar from "./SortBar";
 import FilterBar from "./FilterBar";
@@ -7,6 +8,8 @@ export default function BotCollection({ botlist, addToArmy }) {
   const [sortCategory, setSortCategory] = useState('health');
   const [sortOrder, setSortOrder] = useState('asc');
   const [filterClass, setFilterClass] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
 
   useEffect(() => {
     fetchArmyData();
@@ -44,13 +47,16 @@ export default function BotCollection({ botlist, addToArmy }) {
     }
   });
 
-    // Filtering logic
-    const filteredBotList = filterClass
+  // Filtering logic
+  const filteredBotList = filterClass
     ? sortedBotList.filter((bot) => bot.bot_class === filterClass)
     : sortedBotList;
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentBotList = filteredBotList.slice(indexOfFirstItem, indexOfLastItem);
+
   const handleButtonClicked = async (botId) => {
-    // Check if the bot is already in the army
     const isBotInArmy = armyBots.some((armyBot) => armyBot.id === botId);
 
     if (isBotInArmy) {
@@ -59,11 +65,6 @@ export default function BotCollection({ botlist, addToArmy }) {
     }
 
     addToArmy(botId);
-
-    // Update the army data (assuming you have a function to update the army data)
-    // updateArmyData(botId);
-
-    // Optionally, you can refetch the army data to ensure it's up-to-date
     fetchArmyData();
   };
 
@@ -78,11 +79,11 @@ export default function BotCollection({ botlist, addToArmy }) {
         sortCategory={sortCategory}
       />
       <FilterBar
-      onFilterChange={handleFilterChange}
-      selectedFilter={filterClass}
-    />
+        onFilterChange={handleFilterChange}
+        selectedFilter={filterClass}
+      />
       <div className="row">
-        {filteredBotList.map((bot, index) => (
+        {currentBotList.map((bot, index) => (
           <div key={index} className="col-md-3 mb-3">
             <div className="card">
               <img src={bot.avatar_url} className="card-img-top" alt={bot.name} />
@@ -104,6 +105,17 @@ export default function BotCollection({ botlist, addToArmy }) {
               </div>
             </div>
           </div>
+        ))}
+      </div>
+      <div className="pagination">
+        {Array.from({ length: Math.ceil(filteredBotList.length / itemsPerPage) }, (_, i) => (
+          <button
+            key={i + 1}
+            onClick={() => setCurrentPage(i + 1)}
+            className={`btn ${currentPage === i + 1 ? 'btn-primary' : 'btn-secondary'}`}
+          >
+            {i + 1}
+          </button>
         ))}
       </div>
     </div>
