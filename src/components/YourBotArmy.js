@@ -19,7 +19,7 @@ export default function YourBotArmy() {
     if (isConfirmed) {
       try {
         const botIdToDelete = armybotInfo[index].id; // Adjust this based on your bot data structure
-        const deleteUrl = `http://localhost:8001/army/${botIdToDelete}`;
+        const deleteUrl = `https://bots-server-0vqw.onrender.com/army/${botIdToDelete}`;
 
         // Make a delete request
         await fetch(deleteUrl, { method: 'DELETE' });
@@ -35,7 +35,7 @@ export default function YourBotArmy() {
   };
 
   const fetchArmyData = async () => {
-    const url = 'http://localhost:8001/army';
+    const url = 'https://bots-server-0vqw.onrender.com/army';
     try {
       const response = await fetch(url);
       const data = await response.json();

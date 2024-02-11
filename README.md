@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Bot Army Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Bot Army Management App! This application allows users to explore and manage a collection of bots, enlist them into their personal army, and strategically organize their army for battles.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [How to Play](#how-to-play)
+4. [Screenshots](#screenshots)
+5. [Installation](#installation)
+6. [Usage](#usage)
+7. [Technologies Used](#technologies-used)
+8. [Contributing](#contributing)
+9. [License](#license)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Bot Army Management App is a React-based web application that interacts with a server to fetch data about available bots, the user's enlisted army, and allows users to perform actions such as enlisting bots, releasing them from the army, and more.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Bot Collection:** Explore a diverse collection of bots, each with unique attributes such as armor, class, damage, and health.
+- **Enlist to Your Army:** Enlist bots to create your ultimate army. Choose wisely as you can only have one bot from each class in your army. You have a chance to enlist six recruits.
+- **Manage Your Army:** View and manage your bot army. Release bots if you need to make room for new recruits or discharge them from your army entirely.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to Play
 
-### `npm run build`
+1. **Explore the Bot Collection:** Discover various bots and their attributes in the Bot Collection.
+2. **Enlist to Your Army:** Click on "Enlist to Your Army" to enlist bots to your personal army. Remember, you can enlist up to six recruits, one from each class.
+3. **Manage Your Bot Army:** View and manage your bot army on the "Your Bot Army" page.
+4. **Release Bots:** Release bots to make room for new recruits or discharge them from your army.
+5. **Strategically Build Your Army:** Strategically build a powerful and balanced army for victory!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Demo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*Included video of the application to give users a visual overview.* (https://youtu.be/7tNcqYfC0so)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+1. Clone the repository: `git clone https://github.com/your-username/bot-army-app.git`
+2. Navigate to the project directory: `cd bot-army-app`
+3. Install dependencies: `npm install`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Start the development server: `npm start`
+2. Open your browser and go to `http://localhost:3000` to access the application.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies Used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- React
+- React Router
+- JavaScript
+- HTML
+- CSS
+- Fetch API for data retrieval
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you'd like to contribute to this project, please follow these guidelines:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and submit a pull request.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE).

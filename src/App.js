@@ -15,7 +15,7 @@ function App() {
   }, []);
 
   async function fetchData() {
-    const url = 'http://localhost:8001/bots';
+    const url = 'https://bots-server-0vqw.onrender.com/bots';
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -26,7 +26,7 @@ function App() {
   }
 
   async function addBotToArmy(botId) {
-    const url = 'http://localhost:8001/army';
+    const url = 'https://bots-server-0vqw.onrender.com/army';
     const botToAdd = botList.find(bot => bot.id === botId);
 
     try {

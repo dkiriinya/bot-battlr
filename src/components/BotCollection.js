@@ -18,7 +18,7 @@ export default function BotCollection({ botlist, addToArmy }) {
   }, []);
 
   const fetchArmyData = async () => {
-    const armyUrl = 'http://localhost:8001/army';
+    const armyUrl = 'https://bots-server-0vqw.onrender.com/army';
     try {
       const response = await fetch(armyUrl);
       const data = await response.json();
