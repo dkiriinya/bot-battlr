@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const navbarLinks = ['', 'Army']; // Add your additional links as needed
+  const navbarLinks = ['', 'Army', 'About']; // Add your additional links as needed
 
   const headerStyle = {
     backgroundColor: 'teal', // Modern background color (you can replace with your preferred color)

@@ -1,4 +1,3 @@
-// FilterBar.js
 import React from 'react';
 
 const FilterBar = ({ onFilterChange, selectedFilter }) => {

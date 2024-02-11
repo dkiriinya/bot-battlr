@@ -1,4 +1,3 @@
-// BotCollection.js
 import React, { useEffect, useState } from "react";
 import SortBar from "./SortBar";
 import FilterBar from "./FilterBar";
@@ -68,6 +67,13 @@ export default function BotCollection({ botlist, addToArmy }) {
       console.log('Bot is already in the army');
       return;
     }
+    const botToAdd = botlist.find((bot) => bot.id === botId);
+    const existingBotOfClass = armyBots.find((armyBot) => armyBot.bot_class === botToAdd.bot_class);
+
+    if (existingBotOfClass) {
+      alert(`Already have a bot of class ${botToAdd.bot_class} in the army`);
+      return;
+    }
 
     addToArmy(botId);
     fetchArmyData();
@@ -109,7 +115,7 @@ export default function BotCollection({ botlist, addToArmy }) {
                   </button>
                 ) : (
                   <button className="btn btn-primary" onClick={() => handleButtonClicked(bot.id)}>
-                    Add to your Army
+                    Enlist to your Army
                   </button>
                 )}
               </div>

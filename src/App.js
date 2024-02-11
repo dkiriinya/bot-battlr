@@ -5,6 +5,7 @@ import BotCollection from './components/BotCollection';
 import YourBotArmy from './components/YourBotArmy';
 import { Routes,Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import About from './components/About';
 
 function App() {
   const [botList, setBotList] = useState([]);
@@ -53,6 +54,7 @@ function App() {
     <Navbar />
       <Routes>
         <Route path='/' element={<BotCollection botlist={botList} addToArmy={addBotToArmy} />} />
+        <Route path='/about' element = {<About/>} />
         <Route path='/Army' element={<YourBotArmy/>} />
       </Routes>
       

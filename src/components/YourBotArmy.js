@@ -48,10 +48,13 @@ export default function YourBotArmy() {
   return (
     <div className="container">
       <h1 style={{ textAlign: "center" }}>Your Bot Army</h1>
+      <p style={{textAlign:"center"}}>
+      consists of up to 6 bots that you can enlist to your personal army. One for each class. Choose wisely!
+      </p>
       <div className="row">
         {armybotInfo.map((bot, index) => (
-          <div key={index} className="col-md-3 mb-3">
-            <div className="card">
+          <div key={index} className="col-md-4 mb-4">
+            <div className="card mx-auto">
               <img src={bot.avatar_url} className="card-img-top" alt={bot.name} />
               <div className="card-body">
                 <h5 className="card-title">{bot.name}</h5>
