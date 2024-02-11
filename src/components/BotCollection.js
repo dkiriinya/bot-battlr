@@ -123,7 +123,7 @@ export default function BotCollection({ botlist, addToArmy }) {
           </div>
         ))}
       </div>
-      <div className="pagination d-flex justify-content-center mt-3 p-3">
+      <div className="pagination d-flex justify-content-center mt-3 p-3 overflow-auto">
         {Array.from({ length: Math.ceil(filteredBotList.length / itemsPerPage) }, (_, i) => (
           <button
             key={i + 1}

@@ -46,6 +46,7 @@ The Bot Army Management App is a React-based web application that interacts with
 
 1. Start the development server: `npm start`
 2. Open your browser and go to `http://localhost:3000` to access the application.
+3. Or try it for yourself (https://bot-battlr-two-tawny.vercel.app/)
 
 ## Technologies Used
 

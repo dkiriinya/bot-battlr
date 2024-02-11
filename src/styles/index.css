@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Poppins, sans-serif;
 }
 
 h1 {
@@ -12,4 +12,18 @@ h1 {
 
 .card {
   background-color: darkblue;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Adjust styles for smaller screens here */
+  .pagination {
+    overflow-x: auto; /* Add horizontal scrollbar if needed */
+    white-space: nowrap; /* Prevent pagination items from wrapping to the next line */
+    text-align: center; /* Center pagination items */
+  }
+
+  .pagination button {
+    display: inline-block; /* Display pagination items inline */
+    margin: 5px; /* Add spacing between pagination items */
+  }
 }
