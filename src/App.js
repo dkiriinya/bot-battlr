@@ -15,7 +15,7 @@ function App() {
   }, []);
 
   async function fetchData() {
-    const url = 'https://bots-server-0vqw.onrender.com/bots';
+    const url = 'https://json-server-vercel-bice-six.vercel.app/bots';
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -26,7 +26,7 @@ function App() {
   }
 
   async function addBotToArmy(botId) {
-    const url = 'https://bots-server-0vqw.onrender.com/army';
+    const url = 'https://json-server-vercel-bice-six.vercel.app/army';
     const botToAdd = botList.find(bot => bot.id === botId);
 
     try {

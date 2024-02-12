@@ -18,7 +18,7 @@ export default function BotCollection({ botlist, addToArmy }) {
   }, []);
 
   const fetchArmyData = async () => {
-    const armyUrl = 'https://bots-server-0vqw.onrender.com/army';
+    const armyUrl = 'https://json-server-vercel-bice-six.vercel.app/army';
     try {
       const response = await fetch(armyUrl);
       const data = await response.json();
