@@ -46,7 +46,12 @@ The Bot Army Management App is a React-based web application that interacts with
 
 1. Start the development server: `npm start`
 2. Open your browser and go to `http://localhost:3000` to access the application.
-3. Or try it for yourself (https://bot-battlr-two-tawny.vercel.app/)
+- it does work(only gets data no post operations). problem is vercel is very slow at implementing state and server changes. At times it will update state. At times it wont therefore Ive redacted write operations.
+3. You will need to run JSON server 
+```
+json-server --watch db.json --port 8001
+```
+
 
 ## Technologies Used
 

@@ -26,7 +26,7 @@ function App() {
   }
 
   async function addBotToArmy(botId) {
-    const url = 'https://json-server-vercel-bice-six.vercel.app/army';
+    const url = ' http://localhost:8001/army';
     const botToAdd = botList.find(bot => bot.id === botId);
 
     try {
