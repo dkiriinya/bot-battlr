@@ -38,8 +38,8 @@ The Bot Army Management App is a React-based web application that interacts with
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/bot-army-app.git`
-2. Navigate to the project directory: `cd bot-army-app`
+1. Clone the repository: `git clone https://github.com/dkiriinya/bot-army-app.git`
+2. Navigate to the project directory: `cd bot-battlr`
 3. Install dependencies: `npm install`
 
 ## Usage
